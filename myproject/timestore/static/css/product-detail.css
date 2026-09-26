@@ -1,0 +1,28 @@
+@import url('common.css');
+
+.detail-section { padding: 60px 0 90px; }
+.detail { display: grid; grid-template-columns: 1fr 1fr; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+.detail-image { min-height: 540px; background: #e9e4d7; display: grid; place-items: center; position: relative; }
+.detail-image::before { content: ''; width: 300px; height: 300px; border: 1px solid hsl(var(--primary) / .26); border-radius: 50%; position: absolute; }
+.detail-image img { position: relative; width: 94%; max-height: 530px; object-fit: contain; mix-blend-mode: multiply; }
+.detail-info { padding: 42px 40px; }
+.detail-brand { font: 10px var(--app-font-mono); color: hsl(var(--muted-foreground)); letter-spacing: .15em; text-transform: uppercase; }
+.detail-info h2 { font: 500 clamp(32px, 4vw, 48px)/1.03 var(--app-font-serif); letter-spacing: -.04em; margin: 12px 0 18px; }
+.detail-description { color: hsl(var(--muted-foreground)); line-height: 1.75; font-size: 13px; margin-bottom: 25px; }
+.detail-price { font-size: 21px; font-weight: 600; margin-bottom: 26px; }
+.detail-specs { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid hsl(var(--border)); margin: 28px 0; }
+.spec { border-bottom: 1px solid hsl(var(--border)); padding: 14px 0; }
+.spec:nth-child(odd) { margin-right: 15px; }
+.spec-label { display: block; font: 9px var(--app-font-mono); color: hsl(var(--muted-foreground)); text-transform: uppercase; letter-spacing: .09em; margin-bottom: 6px; }
+.spec-value { font-size: 12px; }
+.detail-actions { display: flex; gap: 10px; }
+.detail-actions .primary-button { flex: 1; }
+.detail-actions .icon-button { flex: 0 0 50px; height: 50px; border: 1px solid hsl(var(--border)); color: hsl(var(--accent)); }
+.modal-note { text-align: center; color: hsl(var(--muted-foreground)); font-size: 12px; margin: 18px 0 0; }
+
+@media (max-width: 700px) {
+  .detail { grid-template-columns: 1fr; }
+  .detail-image { min-height: 330px; }
+  .detail-image img { max-height: 340px; }
+  .detail-info { padding: 28px 22px 32px; }
+}

@@ -1,0 +1,30 @@
+@import url('common.css');
+
+.checkout-section { padding: 60px 0 90px; }
+.checkout-card { max-width: 560px; margin: 0 auto; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); padding: 36px; }
+.checkout-header { text-align: center; margin-bottom: 28px; }
+.checkout-header h1 { font: 500 36px/1.1 var(--app-font-serif); margin: 10px 0; }
+.checkout-header p { color: hsl(var(--muted-foreground)); font-size: 13px; margin: 0; }
+
+.form-field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+.form-field label { font: 10px var(--app-font-mono); letter-spacing: .11em; text-transform: uppercase; color: hsl(var(--muted-foreground)); }
+.form-field input, .form-field select { height: 46px; border: 1px solid hsl(var(--input)); background: hsl(var(--background)); color: hsl(var(--foreground)); outline: none; padding: 0 13px; font-size: 14px; }
+.form-field input:focus, .form-field select:focus { border-color: hsl(var(--primary)); box-shadow: 0 0 0 2px hsl(var(--primary) / .14); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.payment-options { margin: 24px 0; }
+.payment-option { display: flex; align-items: center; gap: 14px; padding: 16px; border: 1px solid hsl(var(--border)); margin-bottom: 10px; cursor: pointer; background: hsl(var(--background)); }
+.payment-option input { accent-color: hsl(var(--primary)); }
+.payment-option strong { display: block; font-size: 13px; font-weight: 600; }
+.payment-option span { display: block; color: hsl(var(--muted-foreground)); font-size: 11px; margin-top: 3px; }
+
+.order-summary { background: hsl(var(--background)); padding: 20px; border: 1px solid hsl(var(--border)); margin-bottom: 24px; }
+.order-summary h3 { font: 500 20px var(--app-font-serif); margin: 0 0 14px; }
+.total-row { display: flex; justify-content: space-between; font-size: 13px; padding: 5px 0; }
+.total-row.grand { font-size: 16px; font-weight: 600; border-top: 1px solid hsl(var(--border)); margin-top: 12px; padding-top: 14px; }
+
+.modal-note { text-align: center; color: hsl(var(--muted-foreground)); font-size: 12px; margin: 18px 0 0; }
+
+@media (max-width: 500px) {
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+}

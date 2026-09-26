@@ -1,0 +1,740 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Time Store · A Considered Collection</title>
+
+    <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+   
+    {% block content %}
+
+
+
+        <!-- MAIN CONTENT -->
+        <main>
+
+
+            <!-- HERO -->
+            <section class="hero">
+
+                <div class="container hero-inner">
+
+                    <div class="hero-copy">
+
+                        <div class="hero-kicker eyebrow">
+                            The art of keeping time
+                        </div>
+
+                        <h1>
+                            A watch is<br>
+                            a <em>signature.</em>
+                        </h1>
+
+                        <p>
+                            A considered collection of precision instruments
+                            and quiet icons. Find the watch that says something
+                            before you do.
+                        </p>
+
+                        <a href="#"
+                           class="hero-cta">
+
+                            Explore premium watches
+
+                            <svg width="14"
+                                 height="14"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round">
+
+                                <path d="M5 12h14"></path>
+
+                                <path d="m12 5 7 7-7 7"></path>
+
+                            </svg>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="hero-visual">
+
+                        <div class="hero-disc"></div>
+
+                        <img
+                            class="hero-watch"
+                            src="{% static 'images/rolex-submariner.jpg' %}"
+                            alt="Rolex Submariner Date"
+                        >
+
+                        <span class="hero-caption">
+                            Ref. 126610LN · 2024 selection
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SERVICE STRIP -->
+            <section class="service-strip">
+
+                <div class="container service-grid">
+
+
+                    <!-- AUTHENTICATED -->
+                    <div class="service-item">
+
+                        <svg width="17"
+                             height="17"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+
+                            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+
+                            <path d="m9 12 2 2 4-4"></path>
+
+                        </svg>
+
+                        Authenticated pieces
+
+                    </div>
+
+
+                    <!-- DELIVERY -->
+                    <div class="service-item">
+
+                        <svg width="17"
+                             height="17"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+
+                            <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path>
+
+                            <path d="M15 18H9"></path>
+
+                            <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.24-4.04A1 1 0 0 0 17.76 8H15v10Z"></path>
+
+                            <circle cx="7" cy="18" r="2"></circle>
+
+                            <circle cx="17" cy="18" r="2"></circle>
+
+                        </svg>
+
+                        Insured delivery
+
+                    </div>
+
+
+                    <!-- WARRANTY -->
+                    <div class="service-item">
+
+                        <svg width="17"
+                             height="17"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+
+                            <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"></path>
+
+                            <path d="m9 12 2 2 4-4"></path>
+
+                        </svg>
+
+                        24-month warranty
+
+                    </div>
+
+
+                    <!-- GUIDANCE -->
+                    <div class="service-item">
+
+                        <svg width="17"
+                             height="17"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+
+                            <circle cx="12" cy="8" r="5"></circle>
+
+                            <path d="M20 21a8 8 0 0 0-16 0"></path>
+
+                        </svg>
+
+                        Private guidance
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- COLLECTION -->
+            <section class="section" id="collection">
+
+                <div class="container">
+
+                    <div class="section-head">
+
+                        <div>
+
+                            <div class="eyebrow">
+                                Two ways to wear time
+                            </div>
+
+                            <h2 class="section-title">
+                                Find your frequency.
+                            </h2>
+
+                        </div>
+
+                        <span class="muted"
+                              style="font-size: 13px; max-width: 250px; line-height: 1.6;">
+
+                            From heirloom icons to the pieces that earn
+                            their place every morning.
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="collection-grid">
+
+
+                        <!-- PREMIUM -->
+                        <a href="#"
+                           class="collection-card">
+
+                            <img
+                                src="{% static 'images/patek-nautilus.jpg' %}"
+                                alt="Premium Watches"
+                            >
+
+                            <div class="collection-content">
+
+                                <div class="eyebrow">
+                                    01 · The exceptional
+                                </div>
+
+                                <h3>
+                                    Premium Watches
+                                </h3>
+
+                                <p>
+                                    Rolex, Patek Philippe, Audemars Piguet
+                                    and Richard Mille. The rare, the remarkable,
+                                    the pieces worth waiting for.
+                                </p>
+
+                                <span class="collection-button">
+
+                                    Enter the collection
+
+                                    <svg width="14"
+                                         height="14"
+                                         viewBox="0 0 24 24"
+                                         fill="none"
+                                         stroke="currentColor"
+                                         stroke-width="2"
+                                         stroke-linecap="round"
+                                         stroke-linejoin="round">
+
+                                        <path d="M5 12h14"></path>
+
+                                        <path d="m12 5 7 7-7 7"></path>
+
+                                    </svg>
+
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- DAY TO DAY -->
+                        <a href="#"
+                           class="collection-card secondary-card">
+
+                            <img
+                                src="{% static 'images/omega-seamaster.jpg' %}"
+                                alt="Day-to-Day Watches"
+                            >
+
+                            <div class="collection-content">
+
+                                <div class="eyebrow">
+                                    02 · The everyday
+                                </div>
+
+                                <h3>
+                                    Day-to-Day Watches
+                                </h3>
+
+                                <p>
+                                    Good design, honest materials and the
+                                    right amount of presence for every place
+                                    the day takes you.
+                                </p>
+
+                                <span class="collection-button">
+
+                                    Meet the daily edit
+
+                                    <svg width="14"
+                                         height="14"
+                                         viewBox="0 0 24 24"
+                                         fill="none"
+                                         stroke="currentColor"
+                                         stroke-width="2"
+                                         stroke-linecap="round"
+                                         stroke-linejoin="round">
+
+                                        <path d="M5 12h14"></path>
+
+                                        <path d="m12 5 7 7-7 7"></path>
+
+                                    </svg>
+
+                                </span>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FEATURED WATCHES -->
+            <section class="section featured-section" id="watches">
+
+                <div class="container">
+
+                    <div class="section-head">
+
+                        <div>
+
+                            <div class="eyebrow">
+                                The current edit
+                            </div>
+
+                            <h2 class="section-title">
+                                Watches worth wearing.
+                            </h2>
+
+                        </div>
+
+
+                        <a href="#"
+                           class="text-link">
+
+                            View day-to-day edit
+
+                            <svg width="13"
+                                 height="13"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round">
+
+                                <path d="M5 12h14"></path>
+
+                                <path d="m12 5 7 7-7 7"></path>
+
+                            </svg>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="product-grid">
+
+
+                        <!-- ROLEX -->
+                        <a href="#"
+                           class="product-card">
+
+                            <div class="product-image">
+
+                                <span class="product-tag">
+                                    Iconic
+                                </span>
+
+                                <span class="heart-button"
+                                      aria-label="Wishlist">
+
+                                    <svg width="15"
+                                         height="15"
+                                         viewBox="0 0 24 24"
+                                         fill="none"
+                                         stroke="currentColor"
+                                         stroke-width="2"
+                                         stroke-linecap="round"
+                                         stroke-linejoin="round">
+
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+
+                                    </svg>
+
+                                </span>
+
+                                <img
+                                    src="{% static 'images/rolex-submariner.jpg' %}"
+                                    alt="Rolex Submariner Date"
+                                >
+
+                            </div>
+
+
+                            <div class="product-copy">
+
+                                <div class="product-brand">
+                                    Rolex
+                                </div>
+
+                                <h3 class="product-name">
+                                    Submariner Date
+                                </h3>
+
+                                <div class="product-meta">
+
+                                    <div class="product-price">
+                                        ₹13,850
+                                    </div>
+
+                                    <div class="availability">
+                                        Ready to ship
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- TITAN -->
+                        <a href="#"
+                           class="product-card">
+
+                            <div class="product-image">
+
+                                <span class="product-tag">
+                                    Best value
+                                </span>
+
+                                <span class="heart-button"
+                                      aria-label="Wishlist">
+
+                                    <svg width="15"
+                                         height="15"
+                                         viewBox="0 0 24 24"
+                                         fill="none"
+                                         stroke="currentColor"
+                                         stroke-width="2"
+                                         stroke-linecap="round"
+                                         stroke-linejoin="round">
+
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+
+                                    </svg>
+
+                                </span>
+
+                                <img
+                                    src="{% static 'images/titan-edge.jpg' %}"
+                                    alt="Titan Edge Cerame"
+                                >
+
+                            </div>
+
+
+                            <div class="product-copy">
+
+                                <div class="product-brand">
+                                    Titan
+                                </div>
+
+                                <h3 class="product-name">
+                                    Edge Cerame
+                                </h3>
+
+                                <div class="product-meta">
+
+                                    <div class="product-price">
+
+                                        ₹182
+
+                                        <span class="product-old-price">
+                                            ₹225
+                                        </span>
+
+                                    </div>
+
+                                    <div class="availability">
+                                        Ready to ship
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- OMEGA -->
+                        <a href="#"
+                           class="product-card">
+
+                            <div class="product-image">
+
+                                <span class="heart-button"
+                                      aria-label="Wishlist">
+
+                                    <svg width="15"
+                                         height="15"
+                                         viewBox="0 0 24 24"
+                                         fill="none"
+                                         stroke="currentColor"
+                                         stroke-width="2"
+                                         stroke-linecap="round"
+                                         stroke-linejoin="round">
+
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+
+                                    </svg>
+
+                                </span>
+
+                                <img
+                                    src="{% static 'images/omega-seamaster.jpg' %}"
+                                    alt="Omega Seamaster Aqua Terra"
+                                >
+
+                            </div>
+
+
+                            <div class="product-copy">
+
+                                <div class="product-brand">
+                                    Omega
+                                </div>
+
+                                <h3 class="product-name">
+                                    Seamaster Aqua Terra
+                                </h3>
+
+                                <div class="product-meta">
+
+                                    <div class="product-price">
+                                        ₹4,620
+                                    </div>
+
+                                    <div class="availability">
+                                        Ready to ship
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </a>
+
+
+                        <!-- RADO -->
+                        <a href="#"
+                           class="product-card">
+
+                            <div class="product-image">
+
+                                <span class="heart-button"
+                                      aria-label="Wishlist">
+
+                                    <svg width="15"
+                                         height="15"
+                                         viewBox="0 0 24 24"
+                                         fill="none"
+                                         stroke="currentColor"
+                                         stroke-width="2"
+                                         stroke-linecap="round"
+                                         stroke-linejoin="round">
+
+                                        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+
+                                    </svg>
+
+                                </span>
+
+                                <img
+                                    src="https://www.rado.com/media/sgecom_contentsystem/Campaigns/Valentines_Day/captain-cook-red-2.jpg?im=Resize=(1024,682),aspect=fill;Crop=(0,0,1024,682),gravity=Center"
+                                    alt="Rado Captain Cook"
+                                >
+
+                            </div>
+
+
+                            <div class="product-copy">
+
+                                <div class="product-brand">
+                                    Rado
+                                </div>
+
+                                <h3 class="product-name">
+                                    Captain Cook
+                                </h3>
+
+                                <div class="product-meta">
+
+                                    <div class="product-price">
+                                        ₹1,80,490
+                                    </div>
+
+                                    <div class="availability">
+                                        Ready to ship
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- STORY -->
+            <section class="story">
+
+                <div class="container story-inner">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            More than an object
+                        </div>
+
+                        <h2>
+                            Time, with a point of view.
+                        </h2>
+
+                        <p>
+                            We believe the right watch does not announce
+                            itself. It settles in. It becomes the detail
+                            people remember, and the companion you reach
+                            for without thinking.
+                        </p>
+
+                    </div>
+
+
+                    <div class="story-stat-grid">
+
+
+                        <div class="story-stat">
+
+                            <strong>
+                                38
+                            </strong>
+
+                            <span>
+                                years of horological trust
+                            </span>
+
+                        </div>
+
+
+                        <div class="story-stat">
+
+                            <strong>
+                                2,400+
+                            </strong>
+
+                            <span>
+                                pieces placed with collectors
+                            </span>
+
+                        </div>
+
+
+                        <div class="story-stat">
+
+                            <strong>
+                                24 mo
+                            </strong>
+
+                            <span>
+                                Time Store warranty
+                            </span>
+
+                        </div>
+
+
+                        <div class="story-stat">
+
+                            <strong>
+                                1:1
+                            </strong>
+
+                            <span>
+                                private client guidance
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+        {% endblock %}
+
+
+</body>
+</html>

@@ -1,0 +1,393 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Private Client Login · Time Store</title>
+
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="{% static 'images/favicon.svg' %}">
+
+    <!-- Common CSS -->
+    <link
+        rel="stylesheet"
+        href="{% static 'css/common.css' %}">
+
+    <!-- Login CSS -->
+    <link
+        rel="stylesheet"
+        href="{% static 'css/login.css' %}">
+
+</head>
+
+
+<body>
+{% block content %}
+
+
+
+
+
+
+    <!-- =========================================
+         LOGIN SECTION
+    ========================================== -->
+
+    <main class="auth-section">
+
+        <div class="container">
+
+
+            <div class="auth-card">
+
+
+                <!-- LOGIN HEADER -->
+
+                <div class="auth-header">
+
+                    <div class="eyebrow">
+                        Time Store Private Client
+                    </div>
+
+                    <h1>
+                        Welcome back.
+                    </h1>
+
+                    <p>
+                        Access your saved edits,
+                        private appointments
+                        and order history.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================
+                     DJANGO MESSAGES
+                ================================== -->
+
+                {% if messages %}
+
+                    <div class="messages">
+
+                        {% for message in messages %}
+
+                            <div
+                                class="message {{ message.tags }}">
+
+                                {{ message }}
+
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                {% endif %}
+
+
+
+                <!-- =================================
+                     LOGIN FORM
+                ================================== -->
+
+                <form
+                    method="POST"
+                    action="{% url 'login' %}"
+                    id="loginForm">
+
+                    {% csrf_token %}
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-field">
+
+                        <label
+                            for="name">
+
+                            username
+
+                        </label>
+
+                        <input
+                            id="account-username"
+                            name="username"
+                            type="name"
+                            placeholder="you@example.com"
+                           value="{{ request.POST.email|default:'' }}"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-field">
+
+                        <label
+                            for="account-password">
+
+                            Password
+
+                        </label>
+
+
+                        <div class="password-wrapper">
+
+                            <input
+                                id="account-password"
+                                name="password"
+                                type="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required>
+
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="passwordToggle"
+                                aria-label="Show password">
+
+                                <svg
+                                    id="eyeIcon"
+                                    width="18"
+                                    height="18"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round">
+
+                                    <path
+                                        d="M2 12s3.5-7 10-7
+                                        10 7 10 7-3.5 7-10 7
+                                        S2 12 2 12Z">
+                                    </path>
+
+                                    <circle
+                                        cx="12"
+                                        cy="12"
+                                        r="3">
+                                    </circle>
+
+                                </svg>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- SIGN IN BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                        id="loginButton">
+
+                        <span id="buttonText">
+                            Sign in
+                        </span>
+
+                        <span
+                            class="button-spinner"
+                            id="buttonSpinner">
+                        </span>
+
+                        <svg
+                            id="buttonArrow"
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <path d="M5 12h14"></path>
+
+                            <path d="m12 5 7 7-7 7"></path>
+
+                        </svg>
+
+                    </button>
+
+                </form>
+
+
+
+                <!-- CREATE ACCOUNT -->
+
+                <p class="modal-note">
+
+                    New to Time Store?
+
+                    <a href="{% url 'create_account' %}">
+                        Create an account
+                    </a>
+
+                </p>
+
+
+            </div>
+
+        </div>
+
+    </main>
+    {% endblock %}
+
+
+
+ <!-- =========================================
+     JAVASCRIPT
+========================================== -->
+
+<script>
+
+    /*
+       SHOW / HIDE PASSWORD
+    */
+
+    function setupPasswordToggle(
+        inputId,
+        buttonId
+    ) {
+
+        const input =
+            document.getElementById(inputId);
+
+        const button =
+            document.getElementById(buttonId);
+
+        if (!input || !button) {
+            return;
+        }
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                if (input.type === "password") {
+
+                    input.type = "text";
+
+                    button.setAttribute(
+                        "aria-label",
+                        "Hide password"
+                    );
+
+                } else {
+
+                    input.type = "password";
+
+                    button.setAttribute(
+                        "aria-label",
+                        "Show password"
+                    );
+
+                }
+
+            }
+        );
+
+    }
+
+
+    setupPasswordToggle(
+        "id_password1",
+        "passwordToggle1"
+    );
+
+
+    setupPasswordToggle(
+        "id_password2",
+        "passwordToggle2"
+    );
+
+
+    /*
+       SUBMIT LOADING STATE
+    */
+
+    const form =
+        document.getElementById(
+            "createAccountForm"
+        );
+
+    const button =
+        document.getElementById(
+            "createButton"
+        );
+
+    const buttonText =
+        document.getElementById(
+            "buttonText"
+        );
+
+    const spinner =
+        document.getElementById(
+            "buttonSpinner"
+        );
+
+    const arrow =
+        document.getElementById(
+            "buttonArrow"
+        );
+
+
+    if (form) {
+
+        form.addEventListener(
+            "submit",
+            function () {
+
+                button.disabled = true;
+
+                buttonText.textContent =
+                    "Creating Account...";
+
+                spinner.style.display =
+                    "block";
+
+                arrow.style.display =
+                    "none";
+
+            }
+        );
+
+    }
+
+</script>
+
+  
+
+
+
+
+
+
+</body>
+
+</html>

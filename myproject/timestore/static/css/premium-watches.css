@@ -1,0 +1,7 @@
+@import url('common.css');
+
+.page-header { background: hsl(var(--secondary)); color: hsl(var(--secondary-foreground)); padding: 60px 0; border-bottom: 1px solid hsl(var(--border)); }
+.page-header h1 { font: 500 clamp(36px, 5vw, 58px)/1 var(--app-font-serif); margin: 12px 0 16px; letter-spacing: -.035em; }
+.page-header p { color: hsl(var(--secondary-foreground) / .65); max-width: 520px; line-height: 1.7; font-size: 14px; margin: 0; }
+
+.section { padding: 70px 0; }

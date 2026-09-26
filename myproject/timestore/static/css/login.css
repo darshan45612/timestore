@@ -1,0 +1,333 @@
+@import url('common.css');
+
+/* ================================
+   LOGIN SECTION
+================================ */
+
+.auth-section {
+    padding: 70px 0 100px;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+}
+
+
+/* ================================
+   LOGIN CARD
+================================ */
+
+.auth-card {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+
+    background: hsl(var(--card));
+
+    border: 1px solid hsl(var(--border));
+
+    padding: 42px;
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.auth-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.09);
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.auth-header h1 {
+    font:
+        500 38px/1.1
+        var(--app-font-serif);
+
+    margin: 10px 0 12px;
+
+    color: hsl(var(--foreground));
+}
+
+.auth-header p {
+    color: hsl(var(--muted-foreground));
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    margin: 0 auto;
+
+    max-width: 340px;
+}
+
+
+/* ================================
+   EYEBROW
+================================ */
+
+.eyebrow {
+    font:
+        10px
+        var(--app-font-mono);
+
+    letter-spacing: .14em;
+
+    text-transform: uppercase;
+
+    color: hsl(var(--accent));
+}
+
+
+/* ================================
+   FORM
+================================ */
+
+.form-field {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+.form-field label {
+    font:
+        10px
+        var(--app-font-mono);
+
+    letter-spacing: .11em;
+
+    text-transform: uppercase;
+
+    color: hsl(var(--muted-foreground));
+}
+
+.form-field input {
+    width: 100%;
+
+    height: 48px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid
+        hsl(var(--input));
+
+    background:
+        hsl(var(--background));
+
+    color:
+        hsl(var(--foreground));
+
+    outline: none;
+
+    padding: 0 14px;
+
+    font-size: 14px;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+.form-field input::placeholder {
+    color:
+        hsl(var(--muted-foreground));
+
+    opacity: .65;
+}
+
+.form-field input:hover {
+    border-color:
+        hsl(var(--foreground) / .35);
+}
+
+.form-field input:focus {
+    border-color:
+        hsl(var(--primary));
+
+    box-shadow:
+        0 0 0 3px
+        hsl(var(--primary) / .12);
+}
+
+
+/* ================================
+   LOGIN BUTTON
+================================ */
+
+.primary-button {
+    width: 100%;
+
+    min-height: 48px;
+
+    border: none;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    background:
+        hsl(var(--primary));
+
+    color:
+        hsl(var(--primary-foreground));
+
+    font:
+        11px
+        var(--app-font-mono);
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+    transition:
+        transform .2s ease,
+        opacity .2s ease,
+        box-shadow .2s ease;
+}
+
+.primary-button:hover {
+    opacity: .92;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px
+        hsl(var(--primary) / .18);
+}
+
+.primary-button:active {
+    transform: translateY(0);
+}
+
+.primary-button svg {
+    transition:
+        transform .2s ease;
+}
+
+.primary-button:hover svg {
+    transform:
+        translateX(4px);
+}
+
+
+/* ================================
+   CREATE ACCOUNT
+================================ */
+
+.modal-note {
+    text-align: center;
+
+    color:
+        hsl(var(--muted-foreground));
+
+    font-size: 12px;
+
+    margin:
+        22px 0 0;
+}
+
+.modal-note a {
+    color:
+        hsl(var(--accent));
+
+    text-decoration:
+        underline;
+
+    text-underline-offset:
+        3px;
+
+    transition:
+        opacity .2s ease;
+}
+
+.modal-note a:hover {
+    opacity: .7;
+}
+
+
+/* ================================
+   DJANGO MESSAGES
+================================ */
+
+.messages {
+    margin-bottom: 20px;
+}
+
+.message {
+    padding: 12px 14px;
+
+    margin-bottom: 10px;
+
+    border: 1px solid
+        hsl(var(--border));
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+.message.success {
+    background:
+        rgba(46, 125, 50, .08);
+}
+
+.message.error {
+    background:
+        rgba(198, 40, 40, .08);
+}
+
+.message.info {
+    background:
+        rgba(30, 100, 180, .08);
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .auth-section {
+        padding:
+            45px 18px 70px;
+    }
+
+    .auth-card {
+        padding: 30px 22px;
+    }
+
+    .auth-header h1 {
+        font-size: 32px;
+    }
+
+    .auth-header p {
+        font-size: 12px;
+    }
+
+}

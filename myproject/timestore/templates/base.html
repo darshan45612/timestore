@@ -1,0 +1,290 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Time Store · A Considered Collection</title>
+
+    <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet"
+          href="{% static 'css/checkout.css' %}">
+    <link rel="stylesheet"
+          href="{% static 'css/wishlist.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <link
+        rel="stylesheet"
+        href="{% static 'css/login.css' %}">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+   
+    
+
+    
+  <div class="app-shell">
+
+    <!-- TOP LINE -->
+    <div class="topline">
+      <span>
+        Private viewing by appointment ·
+        <strong>Complimentary insured delivery</strong>
+      </span>
+    </div>
+
+
+    
+        <!-- NAVIGATION -->
+        <header class="nav;">
+
+            <div class="container nav-inner">
+
+                <!-- BRAND -->
+                <a href="{% url 'home' %}" class="brand">
+
+                    <span class="brand-mark"></span>
+
+                    <span>
+                        <span class="brand-name">Time Store</span>
+                        <span class="brand-sub">A considered collection</span>
+                    </span>
+
+                </a>
+
+
+                <!-- NAV LINKS -->
+                <nav class="nav-links">
+
+                    <a href="{% url 'home' %}" class="nav-link active" >
+                        Home
+                    </a>
+
+                    <a href="{% url 'product' %}" class="nav-link" style="color:#7B4642;">
+                        Products
+                    </a>
+<div class="dropdown">
+  <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"  style="color: #7B4642;">
+    category
+  </a>
+
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+<li>
+    <a class="dropdown-item"
+       href="{% url 'category' 'premium-watches' %}">
+        Premium Watches
+    </a>
+</li>
+<li>
+    <a class="dropdown-item" href="{% url 'category' 'day-to-day-watches' %}">
+        Day-to-Day Watches
+    </a>
+</li>
+
+
+  </ul>
+</div>
+              <li class="nav-item" >
+                        <a class="nav-link" href="{% url 'search' %}" style="color: #7B4642;">Search</a>
+                    </li>
+       
+
+                </nav>
+
+
+                <!-- NAV ACTIONS -->
+                <div class="nav-actions">
+
+                    <!-- ACCOUNT -->
+                    <a href="{% url 'login' %}"
+                       class="icon-button"
+                       aria-label="Account">
+
+                        <svg width="17"
+                             height="17"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+
+                            <circle cx="12" cy="8" r="5"></circle>
+
+                            <path d="M20 21a8 8 0 0 0-16 0"></path>
+
+                        </svg>
+
+                    </a>
+<a href="{% url 'cart_summary' %}" class="btn btn-outline-dark">
+    <i class="bi-cart-fill me-1"></i>
+    Cart
+
+    <span id="cart_quantity"
+          class="badge bg-dark text-white ms-1 rounded-pill">
+        {{ cart|length }}
+    </span>
+</a>
+
+                    <!-- WISHLIST -->
+                    <a href="{% url 'wishlist' %}"
+                       class="icon-button"
+                       aria-label="Wishlist">
+
+                        <svg width="17"
+                             height="17"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+
+                        </svg>
+
+                        <span class="count">0</span>
+
+                    </a>
+
+
+                   
+                </div>
+
+            </div>
+
+        </header>
+
+    {% block content %}
+    {% endblock %}
+
+        <!-- FOOTER -->
+        <footer class="footer">
+
+            <div class="container footer-grid">
+
+
+                <!-- FOOTER BRAND -->
+                <div>
+
+                    <a href="{% url 'home' %}"
+                       class="brand"
+                       style="margin-bottom: 16px;">
+
+                        <span class="brand-mark"></span>
+
+                        <span>
+
+                            <span class="brand-name">
+                                Time Store
+                            </span>
+
+                            <span class="brand-sub">
+                                A considered collection
+                            </span>
+
+                        </span>
+
+                    </a>
+
+                    <p>
+                        A private watch salon for people who know the
+                        difference a detail can make.
+                    </p>
+
+                </div>
+
+
+                <!-- COLLECTIONS -->
+                <div>
+
+                    <h4>
+                        Collections
+                    </h4>
+
+                    <a href="#">
+                        Premium Watches
+                    </a>
+
+                    <a href="#">
+                        Day-to-Day Watches
+                    </a>
+
+                </div>
+
+
+                <!-- CLIENT CARE -->
+                <div>
+
+                    <h4>
+                        Client care
+                    </h4>
+
+                    <a href="{% url 'login' %}">
+                        Private client login
+                    </a>
+
+                    <a href="{% url 'checkout' %}">
+                        Book a viewing
+                    </a>
+
+                </div>
+
+
+                <!-- PROMISE -->
+                <div>
+
+                    <h4>
+                        Our promise
+                    </h4>
+
+                    <p>
+
+                        <svg width="15"
+                             height="15"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2"
+                             stroke-linecap="round"
+                             stroke-linejoin="round"
+                             style="vertical-align: middle; margin-right: 6px; color: hsl(var(--primary));">
+
+                            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+
+                            <path d="m9 12 2 2 4-4"></path>
+
+                        </svg>
+
+                        Every watch is inspected, authenticated and
+                        prepared for its next chapter.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER BOTTOM -->
+            <div class="container footer-bottom">
+
+                <span>
+                    © 2024 Time Store · New Delhi · Mumbai · Online
+                </span>
+
+                <span>
+                    Precision / Presence / Permanence
+                </span>
+
+            </div>
+
+        </footer>
+
+</body>
+</html>

@@ -1,0 +1,494 @@
+@import url('common.css');
+
+
+/* ================================
+   ACCOUNT PAGE
+================================ */
+
+.account-page {
+    min-height: calc(100vh - 130px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+}
+
+
+/* Background */
+
+.account-background {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .12;
+
+    background-image:
+        radial-gradient(
+            hsl(var(--primary)) .6px,
+            transparent .6px
+        );
+
+    background-size: 20px 20px;
+}
+
+
+/* Decorative circles */
+
+.account-page::before {
+    content: '';
+    position: absolute;
+
+    width: 620px;
+    height: 620px;
+
+    border: 1px solid hsl(var(--primary) / .18);
+    border-radius: 50%;
+
+    left: -260px;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+
+.account-page::after {
+    content: '';
+    position: absolute;
+
+    width: 430px;
+    height: 430px;
+
+    border: 1px dashed hsl(var(--primary) / .15);
+    border-radius: 50%;
+
+    right: -170px;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+
+/* Container */
+
+.account-container {
+    width: min(1050px, 92%);
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    gap: 80px;
+    align-items: center;
+
+    position: relative;
+    z-index: 2;
+
+    padding: 80px 0;
+}
+
+
+/* ================================
+   LEFT SIDE
+================================ */
+
+.account-heading {
+    max-width: 400px;
+}
+
+
+.account-heading .eyebrow {
+    color: hsl(var(--primary));
+    margin-bottom: 25px;
+}
+
+
+.account-heading h1 {
+    font-family: var(--app-font-serif);
+    font-size: clamp(52px, 6vw, 76px);
+    line-height: .98;
+    font-weight: 500;
+    letter-spacing: -.045em;
+    margin: 0;
+}
+
+
+.account-heading h1 em {
+    color: hsl(var(--primary));
+    font-style: normal;
+}
+
+
+.account-heading p {
+    max-width: 340px;
+
+    color: hsl(var(--secondary-foreground) / .62);
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    margin-top: 28px;
+}
+
+
+/* ================================
+   ACCOUNT CARD
+================================ */
+
+.account-card {
+    background: hsl(var(--card));
+
+    border: 1px solid hsl(var(--border));
+
+    padding: 42px;
+
+    box-shadow:
+        0 25px 70px rgb(0 0 0 / .20);
+}
+
+
+/* Card heading */
+
+.card-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+
+    padding-bottom: 28px;
+
+    border-bottom: 1px solid hsl(var(--border));
+
+    margin-bottom: 30px;
+}
+
+
+.card-number {
+    color: hsl(var(--primary));
+
+    font-size: 10px;
+    letter-spacing: .15em;
+
+    padding-top: 5px;
+}
+
+
+.card-heading h2 {
+    font-family: var(--app-font-serif);
+
+    font-size: 32px;
+    font-weight: 500;
+
+    margin: 0 0 6px;
+
+    letter-spacing: -.03em;
+}
+
+
+.card-heading p {
+    color: hsl(var(--muted-foreground));
+
+    font-size: 12px;
+
+    margin: 0;
+}
+
+
+/* ================================
+   FORM
+================================ */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 10px;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+    color: hsl(var(--foreground) / .65);
+}
+
+
+.form-group input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 14px 15px;
+
+    border: 1px solid hsl(var(--border));
+
+    background: hsl(var(--background));
+
+    color: hsl(var(--foreground));
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.form-group input::placeholder {
+    color: hsl(var(--muted-foreground) / .65);
+}
+
+
+.form-group input:focus {
+    border-color: hsl(var(--primary));
+
+    box-shadow:
+        0 0 0 2px hsl(var(--primary) / .08);
+}
+
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+}
+
+
+/* ================================
+   TERMS
+================================ */
+
+.terms {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin: 5px 0 25px;
+
+    color: hsl(var(--muted-foreground));
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    cursor: pointer;
+}
+
+
+.terms input {
+    margin-top: 3px;
+
+    accent-color: hsl(var(--primary));
+}
+
+
+/* ================================
+   CREATE BUTTON
+================================ */
+
+.create-button {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 16px 20px;
+
+    border: 1px solid hsl(var(--primary));
+
+    background: hsl(var(--primary));
+
+    color: hsl(var(--primary-foreground));
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: .14em;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease;
+}
+
+
+.create-button:hover {
+    background: transparent;
+
+    color: hsl(var(--primary));
+
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   LOGIN LINK
+================================ */
+
+.login-link {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: hsl(var(--muted-foreground));
+
+    font-size: 12px;
+}
+
+
+.login-link a {
+    color: hsl(var(--primary));
+
+    text-decoration: none;
+
+    margin-left: 5px;
+
+    border-bottom: 1px solid
+        hsl(var(--primary) / .4);
+
+    padding-bottom: 2px;
+}
+
+
+.login-link a:hover {
+    border-color: hsl(var(--primary));
+}
+
+
+/* ================================
+   BACK HOME
+================================ */
+
+.back-home {
+    position: absolute;
+
+    left: 0;
+    bottom: 25px;
+
+    color: hsl(var(--secondary-foreground) / .55);
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+    transition: color .2s ease;
+}
+
+
+.back-home:hover {
+    color: hsl(var(--primary));
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+.footer {
+    background: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 850px) {
+
+    .account-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        max-width: 600px;
+
+        padding: 65px 0 80px;
+    }
+
+    .account-heading {
+        text-align: center;
+
+        max-width: 500px;
+
+        margin: auto;
+    }
+
+    .account-heading p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .back-home {
+        position: static;
+
+        display: block;
+
+        text-align: center;
+
+        margin-top: 30px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .account-card {
+        padding: 28px 22px;
+    }
+
+    .account-heading h1 {
+        font-size: 50px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .account-container {
+        width: 90%;
+    }
+
+    .account-page::before {
+        width: 400px;
+        height: 400px;
+
+        left: -250px;
+    }
+
+    .account-page::after {
+        width: 300px;
+        height: 300px;
+
+        right: -200px;
+    }
+
+}
