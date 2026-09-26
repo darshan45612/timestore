@@ -40,11 +40,7 @@ urlpatterns = [
         name='product_detail'
     ),
 
-    path(
-        'wishlist/',
-        views.wishlist,
-        name='wishlist'
-    ),
+
 
     path(
         'checkout/',

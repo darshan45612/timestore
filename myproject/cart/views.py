@@ -15,19 +15,29 @@ def cart_summary(request):
 
 
     cart_products = cart.get_prods()
-
-
     quantities = cart.get_quants()
+
+
+    cart_items = []
+
+
+    for product in cart_products:
+        cart_items.append({
+            'product': product,
+            'quantity': quantities[str(product.id)]
+        })
 
 
     return render(
         request,
         'cart_summary.html',
         {
-            'cart_products': cart_products,
-            'quantities': quantities,
+            'cart_items': cart_items,
         }
     )
+
+
+
 
 
 
